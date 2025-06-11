@@ -13,8 +13,8 @@
   >
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { font-size: 16px;min-width: 1024px; overflow-x: auto;  }
-   body {min-width: 1024px; overflow-x: auto; 
+    html { font-size: 16px;min-width: 1024px;   overflow-x: hidden; }
+   body {min-width: 1024px;  overflow-x: hidden;
   font-family: 'Pretendard', sans-serif; background: #FD4F19; color: #000; 
   background: url('bg.jpg') no-repeat center center;
   background-size: cover; /* 화면 크기에 맞춰 꽉 채우기 */
@@ -134,9 +134,11 @@
 .brand-hero .hero-main {
   position: relative;
   z-index: 1;
+    overflow-x: hidden;
    width: 40%;      
   max-width: none;
   display: inline-block;
+
 }
 
 /* 3) 텍스트 PNG(hero-k, hero-en)는 z-index:2 (맨 앞으로) */
@@ -518,15 +520,15 @@ footer {
   </header>
 
 <section class="brand-hero">
-    <img class="hero-k"    src="k.png"  alt="김 예빈" />
+      <img class="hero-k"    src="k.png"  alt="김 예빈" />
   <img class="hero-en"   src="en.png" alt="Kim Ye Bin" />
-  <img class="hero-main" src="me.jpg" alt="브랜드 소개 이미지" />
+  <img class="hero-main" src="mee.png" alt="브랜드 소개 이미지" />
 
 </section>
 
  
   <div class="hero-copy">
-    <p class="kr-large"><br><br><br><br><br><br><br><br><br><br>
+    <p class="kr-large"><br><br><br>
       “공주 김禮, 밝을 叡, 빛날 䨻. 세상에서 가장 빛나고<br>
       밝은 사람으로 살아가라는 저희 부모님의 소망처럼 GBB는<br>
       크리스천으로 세상에 빛을 밝히고, 축복을 전하는 소명을 갖고 있습니다.”
@@ -559,12 +561,15 @@ footer {
   Without the wind, seeds cannot travel; likewise, Christians live as dandelion seeds, borne by God’s unseen hand.<br>
   We craft elegant, meaningful jewelry to inspire believers to meditate on the Lord and walk in their calling each day.
 </p>
-<img src="p.png" alt="decorative separator" 
-     style="display: block;
-            margin: 7rem auto; /* 위아래 3rem, 좌우 가운데 정렬 */
-            max-width: 800px; /* 필요에 따라 크기 조절 */
-            width: 100%;      /* 컨테이너 너비의 100% 내에서 */">
-</section>
+<img src="p.png" alt="decorative separator"
+     style="
+       display: block;
+       margin: 7rem auto;
+       max-width: 800px;
+       width: 100%;
+       /* ➔ 오른쪽으로 20px 이동 */
+       transform: translateX(15px);
+     ">
   </div>
 </section>
 
