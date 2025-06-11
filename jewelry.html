@@ -4,15 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="icon" type="image/png" href="gbb.png" />
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=1024">
  <title>GBB</title>
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { font-size: 16px; }
-    body { font-family: 'Pretendard', sans-serif; background: #000; color: #fff; }
+    html { font-size: 16px; min-width: 1024px; overflow-x: auto; }
+    body { font-family: 'Pretendard', sans-serif; background: #000; color: #fff; min-width: 1024px; overflow-x: auto; }
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
    header {
@@ -22,7 +22,10 @@
   gap: 0.5rem;            /* 아이콘–텍스트 간 간격도 조금 좁힙니다 */
   font-size: 0.75rem;     /* 텍스트 크기를 0.875rem → 0.75rem으로 축소 */
 }
-
+.wrapper {
+  width: 1024px;      /* 또는 원하는 픽셀 값 */
+  margin: 0 auto;     /* 가운데 정렬 */
+}
 /* 로그인·장바구니 아이콘 크기 조정 */
 .header-right .icon {
   width: 16px;            /* 기존 20px → 16px */
@@ -444,7 +447,7 @@ footer {
     <br><br><br><br><br><br><h2 class="edition-title">
       <span class="en">GBB Crown of Thorns Edition</span>
       <span class="ko">전체보기</span>
-      <span class="arrow">▶</span>
+      <span class="arrow"></span>
     </h2>
 
     <div class="edition-images">
