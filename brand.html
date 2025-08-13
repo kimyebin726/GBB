@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="icon" type="image/png" href="gbb.png" />
   <meta charset="UTF-8">
@@ -68,25 +69,49 @@
     .header-right { display: flex; align-items: center; gap: 1rem; font-size: 0.875rem; color: #fff; }
 
     /* Navigation */
-   nav {  background-color: #000;  }
+ 
+    /* Navigation */
+    nav { background: #000; }
     .nav-container { max-width: 1920px; margin: 0 auto; text-align: center; padding: 0.75rem 0; }
     .nav-container ul { display: inline-flex; gap: 2.5rem; }
-    .nav-container li { color: #fff; font-size: 0.875rem; letter-spacing: 0.1em; cursor: pointer; transition: opacity .2s; }
-    .nav-container li:hover { opacity: .7; }
-    
-.nav-container ul li:nth-child(5)::after {
-  content: "";
-  display: inline-block;
-  width: 1px;            /* 막대기의 너비 */
-  height: 16px;          /* 막대기의 높이 */
-  background-color: #fff;
-  margin: 0 1.5rem;      /* 양옆 간격 조절 */
-  vertical-align: middle;
+    .nav-container li {
+  color: #fff;
+  font-size: 0.75rem; /* 한 단계 작게 */
+  letter-spacing: 0.08em; /* 간격도 조금 줄임 */
+  cursor: pointer;
+  transition: opacity .2s;
+}/* nav 컨테이너는 그대로 유지 */
+.nav-container { display:flex; justify-content:center; align-items:center; gap:2rem; }
+.nav-left, .nav-right { display:flex; list-style:none; margin:0; padding:0; gap:2.5rem; }
+.nav-right { gap:3rem; }
+
+/* 링크를 반드시 block으로(클릭영역 확보) */
+.nav-container a{
+  display:block;
+  padding: .25rem 0;           /* 세로 여유 */
+  color:#fff;
+  text-decoration:none;
 }
-.nav-container ul li a {
-  display: block;
-  0 1.5rem; /* 필요에 따라 조절 */
-  color: inherit;       /* 기존 색상 유지 */
+
+/* hover/active */
+.nav-container a:hover{ opacity:.75; }
+
+/* 키보드 포커스 표시 */
+.nav-container a:focus-visible{
+  outline:2px solid #E6C38B;
+  outline-offset:2px;
+  border-radius:2px;
+}
+
+/* 가운데 구분선이 클릭 방해하지 않도록 */
+.divider{
+  width:1px; height:16px; background:#fff;
+  pointer-events:none;
+}
+
+.nav-gap {
+  height: 10px; /* 원하는 여백 높이 */
+  background-color: #000; /* 검은색 */
 }
     /* Main: 브랜드 소개 */
     main { max-width: 1200px; margin: 3rem auto; padding: 0 1rem; }
@@ -509,14 +534,27 @@ footer {
         <a href="#"><img class="icon" src="d.png" alt="장바구니">장바구니</a>
       </div>
     </div>
-    <nav>
-      <div class="nav-container">
-        <ul>
-          <li>하이주얼리</li><li><a href="jewelry.html">주얼리</a></li><li><a href="watch.html">시계</a></li><li>액세서리</li>
-          <li>기프트</li><li><a href="brand.html">GBB 소개</a></li><li>새로운 소식</li><li>GBB 컬렉션 히스토리</li>
-        </ul>
-      </div>
-    </nav>
+   <nav>
+  <div class="nav-container">
+    <ul class="nav-left">
+      <li><a href="high.html">하이주얼리</a></li>
+      <li><a href="jewelry.html">주얼리</a></li>
+      <li><a href="watch.html">시계</a></li>
+      <li><a href="accessory.html">액세서리</a></li>
+      <li><a href="gift.html">기프트</a></li>
+    </ul>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <ul class="nav-right">
+      <li><a href="brand.html">GBB 소개</a></li>
+      <li><a href="news.html">새로운 소식</a></li>
+      <li><a href="history.html">GBB 컬렉션 히스토리</a></li>
+    </ul>
+  </div>
+</nav>
+
+
   </header>
 
 <section class="brand-hero">
